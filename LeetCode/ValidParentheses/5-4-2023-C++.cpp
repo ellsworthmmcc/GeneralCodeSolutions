@@ -2,6 +2,9 @@ class Solution {
 public:
     bool isValid(string s) {
 
+        // Time Complexity:  O(n)
+        // Space Complexity: O(n)
+        
         // Using stack to keep track of the order of the parentheses
         stack<char> st;
 
