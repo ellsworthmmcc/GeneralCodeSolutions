@@ -1,5 +1,5 @@
 function searchInsert(nums: number[], target: number): number {
-    // Time Complexity:  O(n log n)
+    // Time Complexity:  O(log n)
     // Space Complexity: O(1)
 
     // Assumes given array is sorted in ascending order
