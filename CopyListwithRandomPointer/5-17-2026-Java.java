@@ -21,27 +21,34 @@ class Solution {
 
         if (head == null) return null;
 
-        Map<Node, Node> map = new HashMap<>();
-
-        // First pass, creates all copied nodes
+        // Interweave
         Node current = head;
         while (current != null) {
-            map.put(current, new Node(current.val));
-            current = current.next;
+            Node copy = new Node(current.val);
+            copy.next = current.next;
+            current.next = copy;
+            current = copy.next;
         }
 
-        // Second pass, wires next and random
+        // Wire random
         current = head;
-        while (current != null) {
-            if (current.next != null) {
-                map.get(current).next = map.get(current.next);
-            }
+        while(current != null) {
             if (current.random != null) {
-                map.get(current).random = map.get(current.random);
+                current.next.random = current.random.next;
             }
+            current = current.next.next;
+        }
+
+        // Seperate
+        Node newHead = head.next;
+        current = head;
+        while(current != null) {
+            Node copy = current.next;
+            current.next = copy.next;
+            copy.next = copy.next != null ? copy.next.next : null;
             current = current.next;
         }
 
-        return map.get(head);
+        return newHead;
     }
 }
