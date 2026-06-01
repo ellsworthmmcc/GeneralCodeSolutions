@@ -32,12 +32,13 @@ class Solution:
         # Time Complexity:  O(n)
         # Space Complexity: O(n)
         
-        nodeSet = set()
+        seen = set()
+        curr = head
 
-        while head:
-            if head in nodeSet:
+        while curr:
+            if curr in seen:
                 return True
-            nodeSet.add(head)
-            head = head.next
+            seen.add(curr)
+            curr = curr.next
 
         return False
