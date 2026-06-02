@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 
-# Recursion
+# Recursive
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         # Time Complexity:  O(n)
