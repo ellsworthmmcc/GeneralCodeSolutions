@@ -6,7 +6,7 @@
 #         self.right = right
 
 class Solution:
-    # Recursive
+    # Recursive DFS
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         # Time Complexity:  O(n)
         # Space Complexity: O(n)
@@ -20,7 +20,7 @@ class Solution:
         
         return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
     
-    # Iterative
+    # Iterative BFS
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         # Time Complexity:  O(n)
         # Space Complexity: O(n)
